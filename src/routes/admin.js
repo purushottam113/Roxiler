@@ -3,6 +3,8 @@ const createStore = require("../controllers/createStore");
 const createAdmin = require("../controllers/createAdmin");
 const adminRouter = express.Router();
 const prisma = require ("../config/db.config");
+const getStore = require("../controllers/getStore");
+const getUsers = require("../controllers/getUsers");
 
 //ADD NEW STORE
 adminRouter.post("/newStore", createStore);
@@ -39,5 +41,13 @@ adminRouter.get("/ratingcount", async (req, res)=> {
         res.status(400).send(error.message)
     }
 })
+
+//STORES LIST
+adminRouter.get("/storelist", getStore);
+
+//USERS LIST
+adminRouter.get("/userlist", getUsers);
+
+
 
 module.exports = adminRouter;

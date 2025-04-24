@@ -4,7 +4,7 @@ const bcrypt = require("bcrypt");
 
 const createStore = async (req, res)=> {
     try {
-        const {name, address, ownerId} = req.body;
+        const {name, email, address, ownerId} = req.body;
 
         const user = await prisma.user.findUnique({
             where: {
@@ -19,6 +19,7 @@ const createStore = async (req, res)=> {
         const store = await prisma.store.create({
             data: {
                 name: name,
+                email: email,
                 address: address,
                 owner: { connect: {id: ownerId}}
             }

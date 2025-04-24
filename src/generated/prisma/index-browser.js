@@ -129,8 +129,10 @@ exports.Prisma.UserScalarFieldEnum = {
 exports.Prisma.StoreScalarFieldEnum = {
   id: 'id',
   name: 'name',
+  email: 'email',
   address: 'address',
-  ownerId: 'ownerId'
+  ownerId: 'ownerId',
+  avgratings: 'avgratings'
 };
 
 exports.Prisma.RatingScalarFieldEnum = {
@@ -148,6 +150,11 @@ exports.Prisma.SortOrder = {
 exports.Prisma.QueryMode = {
   default: 'default',
   insensitive: 'insensitive'
+};
+
+exports.Prisma.NullsOrder = {
+  first: 'first',
+  last: 'last'
 };
 exports.Role = exports.$Enums.Role = {
   ADMIN: 'ADMIN',

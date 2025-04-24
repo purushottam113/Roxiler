@@ -28,10 +28,12 @@ model User {
 model Store {
   id              Int @id @default(autoincrement())
   name            String
+  email           String
   address         String
   ownerId         Int @unique
   owner           User @relation("userStore",fields: [ownerId], references: [id])
   ratings         Rating[]
+  avgratings      Int?
 }
 
 model Rating {
