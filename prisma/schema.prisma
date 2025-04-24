@@ -31,9 +31,9 @@ model Store {
   email           String
   address         String
   ownerId         Int @unique
+  avgratings      Int?
   owner           User @relation("userStore",fields: [ownerId], references: [id])
   ratings         Rating[]
-  avgratings      Int?
 }
 
 model Rating {

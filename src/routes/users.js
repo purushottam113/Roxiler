@@ -79,6 +79,22 @@ userRouter.post("/user/rateToStore", userAuth, async(req, res)=>{
                 },
             })
         }
+
+        const allRatings = await prisma.rating.findMany({
+            where: { storeId },
+            select: { rating: true },
+          });
+        
+          const total = allRatings.reduce((sum, r) => sum + r.rating, 0);
+          const average = allRatings.length ? total / allRatings.length : 0;
+        
+          await prisma.store.update({
+            where: { id: storeId },
+            data: {
+                avgratings: parseFloat(average.toFixed(2)), 
+            },
+          });
+
         res.json({message: "Rating Submitted.."})
 
     } catch (error) {
