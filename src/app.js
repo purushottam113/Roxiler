@@ -5,6 +5,7 @@ const cors = require('cors');
 const cookieParser = require("cookie-parser");
 const authRouter = require('./routes/auth.js');
 const adminRouter = require('./routes/admin.js');
+const userRouter = require('./routes/users.js');
 const port = 3000
 
 connectDb();
@@ -19,6 +20,7 @@ app.use(cookieParser());
 
 app.use("/", authRouter);
 app.use("/", adminRouter);
+app.use("/", userRouter)
 
 app.use("/", (req, res)=> {
   res.send("HomePage on 3000");

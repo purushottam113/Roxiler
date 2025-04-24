@@ -12,20 +12,6 @@ const getStore = async (req, res)=> {
             }
         })
         
-        // const storedList = stores.map((store)=>{
-        //     const totalRating = store.ratings.length;
-        //     const ratingSum = store.ratings.reduce((sum, i)=> sum + r.rating, 0);
-        //     const avg = totalRating ? math.round((ratingSum / totalRating)): "No ratings"
-
-        //     return{
-        //         id: store.id,
-        //         name: store.name,
-        //         email: store.email,
-        //         address: store.address,
-        //         avgratings: avg 
-        //     }
-        // })
-        
         res.send(stores);
 
     } catch (error) {
