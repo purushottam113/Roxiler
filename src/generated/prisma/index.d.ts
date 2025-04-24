@@ -2296,7 +2296,6 @@ export namespace Prisma {
     id: number | null
     name: string | null
     address: string | null
-    password: string | null
     ownerId: number | null
   }
 
@@ -2304,7 +2303,6 @@ export namespace Prisma {
     id: number | null
     name: string | null
     address: string | null
-    password: string | null
     ownerId: number | null
   }
 
@@ -2312,7 +2310,6 @@ export namespace Prisma {
     id: number
     name: number
     address: number
-    password: number
     ownerId: number
     _all: number
   }
@@ -2332,7 +2329,6 @@ export namespace Prisma {
     id?: true
     name?: true
     address?: true
-    password?: true
     ownerId?: true
   }
 
@@ -2340,7 +2336,6 @@ export namespace Prisma {
     id?: true
     name?: true
     address?: true
-    password?: true
     ownerId?: true
   }
 
@@ -2348,7 +2343,6 @@ export namespace Prisma {
     id?: true
     name?: true
     address?: true
-    password?: true
     ownerId?: true
     _all?: true
   }
@@ -2443,7 +2437,6 @@ export namespace Prisma {
     id: number
     name: string
     address: string
-    password: string
     ownerId: number
     _count: StoreCountAggregateOutputType | null
     _avg: StoreAvgAggregateOutputType | null
@@ -2470,7 +2463,6 @@ export namespace Prisma {
     id?: boolean
     name?: boolean
     address?: boolean
-    password?: boolean
     ownerId?: boolean
     owner?: boolean | UserDefaultArgs<ExtArgs>
     ratings?: boolean | Store$ratingsArgs<ExtArgs>
@@ -2481,7 +2473,6 @@ export namespace Prisma {
     id?: boolean
     name?: boolean
     address?: boolean
-    password?: boolean
     ownerId?: boolean
     owner?: boolean | UserDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["store"]>
@@ -2490,7 +2481,6 @@ export namespace Prisma {
     id?: boolean
     name?: boolean
     address?: boolean
-    password?: boolean
     ownerId?: boolean
     owner?: boolean | UserDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["store"]>
@@ -2499,11 +2489,10 @@ export namespace Prisma {
     id?: boolean
     name?: boolean
     address?: boolean
-    password?: boolean
     ownerId?: boolean
   }
 
-  export type StoreOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "address" | "password" | "ownerId", ExtArgs["result"]["store"]>
+  export type StoreOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "address" | "ownerId", ExtArgs["result"]["store"]>
   export type StoreInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     owner?: boolean | UserDefaultArgs<ExtArgs>
     ratings?: boolean | Store$ratingsArgs<ExtArgs>
@@ -2526,7 +2515,6 @@ export namespace Prisma {
       id: number
       name: string
       address: string
-      password: string
       ownerId: number
     }, ExtArgs["result"]["store"]>
     composites: {}
@@ -2956,7 +2944,6 @@ export namespace Prisma {
     readonly id: FieldRef<"Store", 'Int'>
     readonly name: FieldRef<"Store", 'String'>
     readonly address: FieldRef<"Store", 'String'>
-    readonly password: FieldRef<"Store", 'String'>
     readonly ownerId: FieldRef<"Store", 'Int'>
   }
     
@@ -4525,7 +4512,6 @@ export namespace Prisma {
     id: 'id',
     name: 'name',
     address: 'address',
-    password: 'password',
     ownerId: 'ownerId'
   };
 
@@ -4694,7 +4680,6 @@ export namespace Prisma {
     id?: IntFilter<"Store"> | number
     name?: StringFilter<"Store"> | string
     address?: StringFilter<"Store"> | string
-    password?: StringFilter<"Store"> | string
     ownerId?: IntFilter<"Store"> | number
     owner?: XOR<UserScalarRelationFilter, UserWhereInput>
     ratings?: RatingListRelationFilter
@@ -4704,7 +4689,6 @@ export namespace Prisma {
     id?: SortOrder
     name?: SortOrder
     address?: SortOrder
-    password?: SortOrder
     ownerId?: SortOrder
     owner?: UserOrderByWithRelationInput
     ratings?: RatingOrderByRelationAggregateInput
@@ -4718,7 +4702,6 @@ export namespace Prisma {
     NOT?: StoreWhereInput | StoreWhereInput[]
     name?: StringFilter<"Store"> | string
     address?: StringFilter<"Store"> | string
-    password?: StringFilter<"Store"> | string
     owner?: XOR<UserScalarRelationFilter, UserWhereInput>
     ratings?: RatingListRelationFilter
   }, "id" | "ownerId">
@@ -4727,7 +4710,6 @@ export namespace Prisma {
     id?: SortOrder
     name?: SortOrder
     address?: SortOrder
-    password?: SortOrder
     ownerId?: SortOrder
     _count?: StoreCountOrderByAggregateInput
     _avg?: StoreAvgOrderByAggregateInput
@@ -4743,7 +4725,6 @@ export namespace Prisma {
     id?: IntWithAggregatesFilter<"Store"> | number
     name?: StringWithAggregatesFilter<"Store"> | string
     address?: StringWithAggregatesFilter<"Store"> | string
-    password?: StringWithAggregatesFilter<"Store"> | string
     ownerId?: IntWithAggregatesFilter<"Store"> | number
   }
 
@@ -4873,7 +4854,6 @@ export namespace Prisma {
   export type StoreCreateInput = {
     name: string
     address: string
-    password: string
     owner: UserCreateNestedOneWithoutStoreInput
     ratings?: RatingCreateNestedManyWithoutStoreInput
   }
@@ -4882,7 +4862,6 @@ export namespace Prisma {
     id?: number
     name: string
     address: string
-    password: string
     ownerId: number
     ratings?: RatingUncheckedCreateNestedManyWithoutStoreInput
   }
@@ -4890,7 +4869,6 @@ export namespace Prisma {
   export type StoreUpdateInput = {
     name?: StringFieldUpdateOperationsInput | string
     address?: StringFieldUpdateOperationsInput | string
-    password?: StringFieldUpdateOperationsInput | string
     owner?: UserUpdateOneRequiredWithoutStoreNestedInput
     ratings?: RatingUpdateManyWithoutStoreNestedInput
   }
@@ -4899,7 +4877,6 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
     address?: StringFieldUpdateOperationsInput | string
-    password?: StringFieldUpdateOperationsInput | string
     ownerId?: IntFieldUpdateOperationsInput | number
     ratings?: RatingUncheckedUpdateManyWithoutStoreNestedInput
   }
@@ -4908,21 +4885,18 @@ export namespace Prisma {
     id?: number
     name: string
     address: string
-    password: string
     ownerId: number
   }
 
   export type StoreUpdateManyMutationInput = {
     name?: StringFieldUpdateOperationsInput | string
     address?: StringFieldUpdateOperationsInput | string
-    password?: StringFieldUpdateOperationsInput | string
   }
 
   export type StoreUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
     address?: StringFieldUpdateOperationsInput | string
-    password?: StringFieldUpdateOperationsInput | string
     ownerId?: IntFieldUpdateOperationsInput | number
   }
 
@@ -5106,7 +5080,6 @@ export namespace Prisma {
     id?: SortOrder
     name?: SortOrder
     address?: SortOrder
-    password?: SortOrder
     ownerId?: SortOrder
   }
 
@@ -5119,7 +5092,6 @@ export namespace Prisma {
     id?: SortOrder
     name?: SortOrder
     address?: SortOrder
-    password?: SortOrder
     ownerId?: SortOrder
   }
 
@@ -5127,7 +5099,6 @@ export namespace Prisma {
     id?: SortOrder
     name?: SortOrder
     address?: SortOrder
-    password?: SortOrder
     ownerId?: SortOrder
   }
 
@@ -5460,7 +5431,6 @@ export namespace Prisma {
   export type StoreCreateWithoutOwnerInput = {
     name: string
     address: string
-    password: string
     ratings?: RatingCreateNestedManyWithoutStoreInput
   }
 
@@ -5468,7 +5438,6 @@ export namespace Prisma {
     id?: number
     name: string
     address: string
-    password: string
     ratings?: RatingUncheckedCreateNestedManyWithoutStoreInput
   }
 
@@ -5517,7 +5486,6 @@ export namespace Prisma {
   export type StoreUpdateWithoutOwnerInput = {
     name?: StringFieldUpdateOperationsInput | string
     address?: StringFieldUpdateOperationsInput | string
-    password?: StringFieldUpdateOperationsInput | string
     ratings?: RatingUpdateManyWithoutStoreNestedInput
   }
 
@@ -5525,7 +5493,6 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
     address?: StringFieldUpdateOperationsInput | string
-    password?: StringFieldUpdateOperationsInput | string
     ratings?: RatingUncheckedUpdateManyWithoutStoreNestedInput
   }
 
@@ -5647,7 +5614,6 @@ export namespace Prisma {
   export type StoreCreateWithoutRatingsInput = {
     name: string
     address: string
-    password: string
     owner: UserCreateNestedOneWithoutStoreInput
   }
 
@@ -5655,7 +5621,6 @@ export namespace Prisma {
     id?: number
     name: string
     address: string
-    password: string
     ownerId: number
   }
 
@@ -5708,7 +5673,6 @@ export namespace Prisma {
   export type StoreUpdateWithoutRatingsInput = {
     name?: StringFieldUpdateOperationsInput | string
     address?: StringFieldUpdateOperationsInput | string
-    password?: StringFieldUpdateOperationsInput | string
     owner?: UserUpdateOneRequiredWithoutStoreNestedInput
   }
 
@@ -5716,7 +5680,6 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
     address?: StringFieldUpdateOperationsInput | string
-    password?: StringFieldUpdateOperationsInput | string
     ownerId?: IntFieldUpdateOperationsInput | number
   }
 

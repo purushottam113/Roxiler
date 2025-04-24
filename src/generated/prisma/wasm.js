@@ -130,7 +130,6 @@ exports.Prisma.StoreScalarFieldEnum = {
   id: 'id',
   name: 'name',
   address: 'address',
-  password: 'password',
   ownerId: 'ownerId'
 };
 

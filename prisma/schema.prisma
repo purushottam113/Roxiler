@@ -29,7 +29,6 @@ model Store {
   id              Int @id @default(autoincrement())
   name            String
   address         String
-  password        String
   ownerId         Int @unique
   owner           User @relation("userStore",fields: [ownerId], references: [id])
   ratings         Rating[]
