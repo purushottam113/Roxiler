@@ -12,7 +12,6 @@ const userAuth = async (req,res,next) => {
 
         const decodedUser = jwt.verify(token, "Moonlight")
         const {id} = decodedUser;
-
         const user = await prisma.user.findUnique({
             where: {
                 id: id

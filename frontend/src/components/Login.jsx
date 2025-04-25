@@ -3,11 +3,14 @@ import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router';
 import { BASE_URL } from '../utils/constants';
+import { addUser } from '../utils/userSlice';
 
 const Login = () => {
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
-  const [role, setRole] = useState("user")
+  const [email, setEmail] = useState("omi123@gmail.com")
+  const [password, setPassword] = useState("password")
+  const [role, setRole] = useState("USER")
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
 
   const handleLogin = async (e) => {
 
@@ -19,8 +22,17 @@ const Login = () => {
             password,
             role
         },{withCredentials: true})
-        // dispatch(addUser(res.data))
-        // return navigate("/feed")
+        dispatch(addUser(res.data))
+
+        if(role === "STORE_OWNER"){
+          return navigate("/owner/dashboard")
+        }
+        if(role === "USER"){
+          return navigate("/user/dashboard")
+        }
+        if(role === "ADMIN"){
+          return navigate("/admin/dashboard")
+        }
 
     } catch (error) {
         console.log(error)

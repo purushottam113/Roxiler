@@ -27,6 +27,7 @@ userRouter.get("/user/storeList", userAuth, async (req, res)=>{
             const userRating = userRatingData? userRatingData.rating : null
 
             return{
+                id: store.id,
                 name: store.name,
                 address: store.address,
                 ovaerallRating: avgRating,
