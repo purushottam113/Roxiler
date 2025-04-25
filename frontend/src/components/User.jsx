@@ -62,19 +62,19 @@ const User = () => {
             <tr key={index} className="hover:bg-gray-100">
               <td className="p-3 border">{store?.name}</td>
               <td className="p-3 border">{store?.address}</td>
-              <td className="p-3 border">{store?.ovaerallRating || "N/A"}</td>
-              <td className="p-3 border">{store?.userSubmitedRating || "N/A"}</td>
+              <td className="p-3 border">{store?.ovaerallRating+ " ⭐" || "N/A"}</td>
+              <td className="p-3 border">{store?.userSubmitedRating+ " ⭐" || "N/A"}</td>
               <td className="p-3 border"> {store.userSubmitedRating? "Modify Your Rating:" : "Rate this Store:"}
                 <select
-                  className="w-full m-2 px-4 py-2 border border-gray-300 rounded-lg"
+                  className="w-fit m-2 px-4 py-2 border border-gray-300 rounded-lg"
                   value={rating}
                   onChange={(e) => handalRating(store.id, e.target.value, store?.userSubmitedRating)}
                 >
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
+                  <option value="1">1 ⭐</option>
+                  <option value="2">2 ⭐</option>
+                  <option value="3">3 ⭐</option>
+                  <option value="4">4 ⭐</option>
+                  <option value="5">5 ⭐</option>
                 </select>
               </td>
             </tr>
